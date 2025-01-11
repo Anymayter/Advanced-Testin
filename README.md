@@ -139,7 +139,12 @@ class MathUtilsTest {
 
 # 8. Kết quả Test
 
+![Screenshot 2025-01-11 165740](https://github.com/user-attachments/assets/96acfcf2-c943-43fd-b078-9c3e2bc9001f)
+
+
 # 9. Mã nguồn chatgpt
+
+https://chatgpt.com/c/6782ab1c-1708-800b-885f-ec702a9963ef
 
 # 10. Sinh viên
 Nguyễn Đức Toàn
