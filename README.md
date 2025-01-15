@@ -58,18 +58,18 @@ mvn clean test
 2. Kiểm tra báo cáo bao phủ kiểm thử:
    Sau khi chạy kiểm thử, báo cáo bao phủ kiểm thử sẽ được tạo trong thư mục target/site/jacoco/. Mở file index.html trong trình duyệt để xem báo cáo chi tiết về mức độ bao phủ.
 
-## Các thuật toán kiểm thử
+### Các thuật toán kiểm thử
 
-# 1. Sắp xếp (Sorting Algorithms)
+1. Sắp xếp (Sorting Algorithms)
 Bubble Sort: Thuật toán sắp xếp bằng cách hoán đổi các phần tử liên tiếp nếu chúng không đúng thứ tự.
 Merge Sort: Thuật toán chia để trị (divide and conquer) sắp xếp mảng.
-# 2. Tìm kiếm (Search Algorithms)
+2. Tìm kiếm (Search Algorithms)
 Tìm kiếm nhị phân (Binary Search): Thuật toán tìm kiếm trong mảng đã được sắp xếp.
 Tìm kiếm tuyến tính (Linear Search): Thuật toán tìm kiếm trong mảng không sắp xếp.
-# 3. Cấu trúc Dữ Liệu (Data Structures)
+3. Cấu trúc Dữ Liệu (Data Structures)
 Ngăn xếp (Stack): Cấu trúc dữ liệu theo nguyên lý LIFO (Last In, First Out).
 Hàng đợi (Queue): Cấu trúc dữ liệu theo nguyên lý FIFO (First In, First Out).
-# 4. Tính toán (Computations)
+4. Tính toán (Computations)
 Fibonacci Sequence: Tính số Fibonacci thứ n.
 Giai thừa (Factorial): Tính giai thừa của một số nguyên dương.
 
