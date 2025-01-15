@@ -1,173 +1,157 @@
-# Advanced-Testing
+# Dự Án Kiểm Thử Thuật Toán và Cấu Trúc Dữ Liệu với JUnit
 
-## Tổng quan
-Dự án này trình bày các kỹ thuật kiểm thử nâng cao sử dụng JUnit cho các thuật toán và cấu trúc dữ liệu phổ biến. Dự án cũng bao gồm các bước để đo lường và cải thiện phạm vi kiểm thử để đạt được phạm vi câu lệnh 100% bằng các công cụ như Jacoco.
+## Mục Tiêu
+Dự án này nhằm kiểm thử các thuật toán sắp xếp, tìm kiếm, cấu trúc dữ liệu và tính toán cơ bản bằng cách sử dụng JUnit. Các bài kiểm thử được thiết kế để đạt mức độ bao phủ kiểm thử cao nhất, bao gồm việc đo mức độ bao phủ dòng lệnh (statement coverage) và nhánh (branch coverage).
 
-## Các Thuật Toán và Cấu Trúc Dữ Liệu Bao Gồm
+## Cấu Trúc Dự Án
+- **Thuật toán và Cấu trúc dữ liệu**:
+  - Sắp xếp: Bubble Sort, Merge Sort.
+  - Tìm kiếm: Tìm kiếm tuyến tính, tìm kiếm nhị phân.
+  - Cấu trúc dữ liệu: Ngăn xếp (Stack), Hàng đợi (Queue).
+  - Tính toán: Fibonacci, Giai thừa.
 
-  - Thuật Toán Sắp Xếp: Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Merge Sort, Heap Sort.
+- **Kiểm thử**:
+  - Các ca kiểm thử được viết bằng JUnit để đảm bảo độ chính xác và đầy đủ của từng thuật toán và cấu trúc dữ liệu.
+  - Đo mức độ bao phủ kiểm thử bằng công cụ JaCoCo.
 
-  - Danh Sách Liên Kết: Danh sách liên kết đơn và danh sách liên kết đôi.
+## Cài Đặt
 
-  - Cây Nhị Phân: Cây tìm kiếm nhị phân (BST), Cây AVL.
+### Cài Đặt Môi Trường
+1. **Cài đặt JDK**: Đảm bảo rằng bạn đã cài đặt JDK 8 trở lên.
+2. **Cài đặt Maven**: Cài đặt Maven để quản lý dự án.
+3. **Cài đặt IDE**: Sử dụng IDE yêu thích như IntelliJ IDEA hoặc Eclipse.
 
-  - Đồ Thị: BFS, DFS, Thuật toán Dijkstra.
+### Cài Đặt Công Cụ Bao Phủ Kiểm Thử (Test Coverage)
+- **JaCoCo**: Công cụ được sử dụng để đo mức độ bao phủ kiểm thử (coverage).
 
-  - Thuật Toán Tìm Kiếm: Tìm kiếm nhị phân, Tìm kiếm chuỗi con (Brute Force, KMP, Rabin-Karp).
+**Cài đặt JaCoCo cho Maven**:
+Thêm cấu hình JaCoCo vào file `pom.xml`:
 
-  - Thuật Toán Đệ Quy: Giai thừa, Fibonacci, Backtracking (ví dụ: N-Queen, Giải Sudoku).
-
-## Đo lường độ bao phủ kiểm thử
-
- Công Cụ Sử Dụng: Jacoco cho Maven hoặc Gradle.
-
- Các Chỉ Số Bao Phủ:
-
-  - Bao phủ lệnh (Instruction Coverage)
-
-  - Bao phủ nhánh (Branch Coverage)
-
-  - Bao phủ dòng (Line Coverage)
-
-  - Bao phủ phương thức/lớp (Method/Class Coverage)
-
-## Đạt 100% bao phủ dòng lệnh
-
-Phân tích các dòng chưa được bao phủ bằng Jacoco.
-
-Thêm các trường hợp kiểm thử toàn diện cho tất cả điều kiện và nhánh.
-
-## Hướng dẫn cài đặt
-
-1. **Yêu cầu hệ thống:**
-
- - **Java**: Phiên bản 11 hoặc mới hơn.
- - **Maven** hoặc **Gradle**: Để quản lý phụ thuộc.
- - **IDE**: IntelliJ IDEA hoặc Eclipse.
-
-2. **Cài đặt dự án:**
-   - Clone dự án về máy:
-     ```bash
-     git clone https://github.com/Anymayter/Advanced-Testing.git
-     cd Advanced-Testing
-     ```
-   - Build dự án bằng Maven:
-     ```bash
-     mvn clean install
-     ```
-   - Hoặc với Gradle:
-     ```bash
-     gradle build
-     ```
-3. **Chạy kiểm thử:**
-   - Sử dụng Maven:
-     ```bash
-     mvn test
-     ```
-   - Sử dụng Gradle:
-     ```bash
-     gradle test
-     ```
-
-## Ví dụ: Sử dụng Jacoco để đo độ bao phủ kiểm thử
-
-- **Mục tiêu:** Đo lường độ bao phủ mã nguồn.
-- **Hướng dẫn:**
-  1. Thêm plugin Jacoco vào tệp `pom.xml`:
-     ```xml
-     <plugin>
-       <groupId>org.jacoco</groupId>
-       <artifactId>jacoco-maven-plugin</artifactId>
-       <version>0.8.7</version>
-       <executions>
-         <execution>
-           <goals>
-             <goal>prepare-agent</goal>
-           </goals>
-         </execution>
-         <execution>
-           <id>report</id>
-           <phase>prepare-package</phase>
-           <goals>
-             <goal>report</goal>
-           </goals>
-         </execution>
-       </executions>
-     </plugin>
-     ```
-  2. Chạy lệnh sau để tạo báo cáo:
-     ```bash
-     mvn clean verify
-     ```
-  3. Mở báo cáo tại: `target/site/jacoco/index.html`.
-
-
-# 7. Các trường hợp kiểm thử
-
-MathUtils.java
-
-```java
-
-public class MathUtils {
-    public int divide(int a, int b) {
-        if (b == 0) {
-            throw new IllegalArgumentException("Divider cannot be zero");
-        }
-        return a / b;
-    }
-
-    public int findMax(int[] numbers) {
-        if (numbers == null || numbers.length == 0) {
-            throw new IllegalArgumentException("Array cannot be null or empty");
-        }
-        int max = numbers[0];
-        for (int num : numbers) {
-            if (num > max) {
-                max = num;
-            }
-        }
-        return max;
-    }
-}
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+                <execution>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
 ```
 
-MathUtilsTest.java
+## Chạy dự án
+
+1. Biên dịch và chạy kiểm thử
+
+mvn clean test
+
+2. Kiểm tra báo cáo bao phủ kiểm thử:
+   Sau khi chạy kiểm thử, báo cáo bao phủ kiểm thử sẽ được tạo trong thư mục target/site/jacoco/. Mở file index.html trong trình duyệt để xem báo cáo chi tiết về mức độ bao phủ.
+
+## Các thuật toán kiểm thử
+
+# 1. Sắp xếp (Sorting Algorithms)
+Bubble Sort: Thuật toán sắp xếp bằng cách hoán đổi các phần tử liên tiếp nếu chúng không đúng thứ tự.
+Merge Sort: Thuật toán chia để trị (divide and conquer) sắp xếp mảng.
+# 2. Tìm kiếm (Search Algorithms)
+Tìm kiếm nhị phân (Binary Search): Thuật toán tìm kiếm trong mảng đã được sắp xếp.
+Tìm kiếm tuyến tính (Linear Search): Thuật toán tìm kiếm trong mảng không sắp xếp.
+# 3. Cấu trúc Dữ Liệu (Data Structures)
+Ngăn xếp (Stack): Cấu trúc dữ liệu theo nguyên lý LIFO (Last In, First Out).
+Hàng đợi (Queue): Cấu trúc dữ liệu theo nguyên lý FIFO (First In, First Out).
+# 4. Tính toán (Computations)
+Fibonacci Sequence: Tính số Fibonacci thứ n.
+Giai thừa (Factorial): Tính giai thừa của một số nguyên dương.
+
+## Kiểm Thử với JUnit
+
+Các bài kiểm thử được thiết kế với JUnit và có các ca kiểm thử cho mỗi thuật toán và cấu trúc dữ liệu. Ví dụ về kiểm thử Bubble Sort:
 
 ```java
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-class MathUtilsTest {
+class SortingTest {
 
     @Test
-    void testDivide() {
-        MathUtils mathUtils = new MathUtils();
-
-        // Kiểm thử trường hợp bình thường
-        assertEquals(2, mathUtils.divide(4, 2));
-
-        // Kiểm thử chia cho 0
-        assertThrows(IllegalArgumentException.class, () -> mathUtils.divide(4, 0));
+    void testBubbleSort() {
+        int[] input = {5, 3, 8, 4, 2};
+        int[] expected = {2, 3, 4, 5, 8};
+        
+        BubbleSort.sort(input);
+        
+        assertArrayEquals(expected, input);
     }
 
     @Test
-    void testFindMax() {
-        MathUtils mathUtils = new MathUtils();
+    void testBubbleSortEmptyArray() {
+        int[] input = {};
+        int[] expected = {};
+        
+        BubbleSort.sort(input);
+        
+        assertArrayEquals(expected, input);
+    }
 
-        // Kiểm thử trường hợp bình thường
-        assertEquals(5, mathUtils.findMax(new int[]{1, 2, 5, 3}));
-
-        // Kiểm thử mảng rỗng
-        assertThrows(IllegalArgumentException.class, () -> mathUtils.findMax(new int[]{}));
-
-        // Kiểm thử mảng null
-        assertThrows(IllegalArgumentException.class, () -> mathUtils.findMax(null));
+    @Test
+    void testBubbleSortSingleElement() {
+        int[] input = {1};
+        int[] expected = {1};
+        
+        BubbleSort.sort(input);
+        
+        assertArrayEquals(expected, input);
     }
 }
 
 ```
+
+## Các Ca Kiểm Thử Bổ Sung Để Đạt 100% Statement Coverage
+
+Các ca kiểm thử đã được thiết kế để bao phủ tất cả các dòng lệnh trong mã nguồn. Ví dụ, với phương thức findMax, các ca kiểm thử bổ sung sẽ bao gồm:
+
+- Mảng rỗng hoặc null.
+- Mảng có một phần tử.
+- Mảng có nhiều phần tử.
+
+```java
+
+@Test
+void testFindMaxWithEmptyArray() {
+    int[] arr = {};  // Mảng rỗng
+    assertThrows(IllegalArgumentException.class, () -> {
+        findMax(arr);
+    });
+}
+
+@Test
+void testFindMaxWithSingleElement() {
+    int[] arr = {5};  // Mảng với một phần tử
+    assertEquals(5, findMax(arr));
+}
+
+@Test
+void testFindMaxWithMultipleElements() {
+    int[] arr = {5, 3, 8, 4, 2};  // Mảng với nhiều phần tử
+    assertEquals(8, findMax(arr));
+}
+
+```
+
+## Kết Quả Kiểm Thử
+
+Sau khi chạy tất cả các ca kiểm thử, mức độ bao phủ kiểm thử dòng lệnh (statement coverage) sẽ đạt 100%. Điều này có nghĩa là mọi dòng lệnh trong mã nguồn đều đã được kiểm thử ít nhất một lần.
 
 ## 🔍 Tính năng nổi bật
 
@@ -175,10 +159,10 @@ class MathUtilsTest {
 - 📊 Công cụ đo lường kiểm thử hiện đại (Jacoco).
 - 🔧 Hỗ trợ cấu hình linh hoạt với Maven/Gradle.
 
+## Kết quả kiểm thử
 
-## Kết quả Test
+Sau khi chạy tất cả các ca kiểm thử, mức độ bao phủ kiểm thử dòng lệnh (statement coverage) sẽ đạt 100%. Điều này có nghĩa là mọi dòng lệnh trong mã nguồn đều đã được kiểm thử ít nhất một lần.
 
-![Screenshot 2025-01-11 165740](https://github.com/user-attachments/assets/96acfcf2-c943-43fd-b078-9c3e2bc9001f)
 
 ## Đóng góp
 
